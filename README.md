@@ -21,26 +21,11 @@ The application consists of:
 
 ---
 
-## Project Structure
-secure-login-demo/
-│── client/
-│ ├── index.html
-│ ├── script.js
-│ └── style.css
-│
-│── server/
-│ ├── server.js
-│ └── package.json
-│
-│── README.md
-
----
-
 ## How to Run the Project
 
 ### 1. Clone the Repository
-git clone https://github.com/AnthonyBibbo/secure-login-demo.git
-cd secure-login-demo
+git clone https://github.com/AnthonyBibbo/hw3-LoginPage.git
+cd hw3-LoginPage
 
 ---
 
