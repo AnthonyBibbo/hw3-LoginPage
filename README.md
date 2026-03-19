@@ -25,12 +25,14 @@ The application consists of:
 
 ### 1. Clone the Repository
 git clone https://github.com/AnthonyBibbo/hw3-LoginPage.git
+
 cd hw3-LoginPage
 
 ---
 
 ### 2. Install Server Dependencies
 cd server
+
 npm install
 
 ---
