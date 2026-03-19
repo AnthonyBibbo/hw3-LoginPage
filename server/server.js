@@ -12,16 +12,16 @@ const PORT = 3000;
 
 // Fake in-memory user (for demo)
 let user = {
-    username: "admin",
+    email: "admin@gmail.com",
     passwordHash: bcrypt.hashSync("password123", 10)
 };
 
 // Login route
 app.post('/login', async (req, res) => {
-    const { username, password } = req.body;
-
-    if (username !== user.username) {
-        return res.status(401).send("Invalid credentials");
+    const { email, password } = req.body;
+    
+    if (email !== user.email) {
+        return res.status(401).send("Incorrect Email or Password");
     }
 
     const match = await bcrypt.compare(password, user.passwordHash);
@@ -29,7 +29,7 @@ app.post('/login', async (req, res) => {
     if (match) {
         res.send("Login successful");
     } else {
-        res.status(401).send("Invalid credentials");
+        res.status(401).send("Incorrect Email or Password")
     }
 });
 
