@@ -17,18 +17,18 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     const email = emailInput.value.trim();
     const password = passwordInput.value.trim();
 
-    responseText.innerText = "";
+    responseText.innerHTML = "";
 
     //ensure there are no empty fields for input when logging in
     if(!email || !password)
     {
-        responseText.innerText = "Email or Password cannot be empty";
+        responseText.innerHTML = "Email or Password cannot be empty";
         return;
     }
 
     if(!verifyEmailPassword(email, password))
     {
-        responseText.innerText = "Email must contain '@' and Password must be at least 8 characters long";
+        responseText.innerHTML = "Email must contain '@' and Password must be at least 8 characters long";
         return;
     }
     
@@ -44,5 +44,5 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
 
     const text = await res.text();
     console.log("Response text:", text);
-    responseText.innerText = text;
+    responseText.innerHTML = text;
 });

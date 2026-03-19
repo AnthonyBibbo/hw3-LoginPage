@@ -21,7 +21,7 @@ app.post('/login', async (req, res) => {
     const { email, password } = req.body;
     
     if (email !== user.email) {
-        return res.status(401).send("Incorrect Email or Password");
+        return res.status(401).send(`Incorrect Email: ${email}`);
     }
 
     const match = await bcrypt.compare(password, user.passwordHash);
@@ -29,7 +29,7 @@ app.post('/login', async (req, res) => {
     if (match) {
         res.send("Login successful");
     } else {
-        res.status(401).send("Incorrect Email or Password")
+        res.status(401).send("Incorrect Password")
     }
 });
 
